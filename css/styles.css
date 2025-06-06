@@ -1,0 +1,58 @@
+@import url(https://fonts.googleapis.com/css?family=Bitter:400,400italic,700);
+/*---------
+rgb(255,255,255)
+rgb(0,0,0)
+
+//Fonts:
+Bitter
+FontAwesome
+
+----------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Bitter";
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.header {
+  background-color: #3a6073;
+  height: 120px;
+  position: relative;
+}
+.header h1 {
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+
+#vue h3 {
+  width: 100%;
+  text-align: center;
+}
+#vue div {
+  text-align: center;
+}
+#vue div img {
+  height: 250px;
+  width: 250px;
+}
+#vue div .foodname {
+  font-weight: bold;
+}
+#vue div .desc {
+  font-family: FontAwesome;
+}
+#vue div button {
+  margin-bottom: 5px;
+}
+
+/*# sourceMappingURL=styles.css.map */

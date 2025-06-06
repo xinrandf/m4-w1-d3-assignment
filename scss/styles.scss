@@ -4,17 +4,20 @@
 /*---------
 rgb(255,255,255)
 rgb(0,0,0)
-rgba(0,0,0,0.5)
-rgba(0,0,0,0.24)
-rgb(22, 34, 42)
-rgb(58, 96, 115)
-
 
 //Fonts:
 Bitter
 FontAwesome
 
 ----------*/
+$white: rgb(255,255,255);
+$black: rgb(0, 0, 0);
+$black-1:rgba(0,0,0,0.5);
+$black-2: rgba(0,0,0,0.24);
+$color1:rgb(22, 34, 42);
+$blue: rgb(58, 96, 115);
+$font1: Bitter;
+$font2: FontAwesome;
 
 * {
   margin: 0;
@@ -24,3 +27,46 @@ FontAwesome
 }
 
 $max-width: 80em;
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.header{
+  background-color: $blue;
+  height: 120px;
+  position: relative;
+  h1{
+    color: $white;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+#vue{
+  h3{
+    width: 100%;
+    text-align: center;
+  }
+  div{
+    // width: 300px;
+    text-align: center;
+    img{
+      height: 250px;
+      width: 250px;
+    }
+    .foodname{
+      font-weight: bold;
+    }
+    .desc{
+      font-family: $font2;
+    }
+    button{
+      margin-bottom: 5px;
+    }
+  }
+}

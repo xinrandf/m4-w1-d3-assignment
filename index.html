@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Midule 4 Week 1 Assignment</title>
+    <title>Module 4 Week 1 Assignment</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.11/vue.js"></script>
 </head>
 <body>
@@ -12,12 +16,99 @@
 <div class="main-wrapper">
   
     <div class="header">
-        <h1>Fresh Food To Go</h1>
+        <h1 class="vertical-center">Fresh Food To Go</h1>
     </div>
     <div id="vue">
-       
+       <h3>Selections</h3>
+       <div class="container" id="gallery">
+        <div class="row">
+                <cata-item class="col-md-3" v-for="item in groceryList" v-bind:good="item">
+                </cata-item>
+        </div>
+       </div>
     </div>
 
 </div>
+<script>
+    Vue.component('cata-item',{
+        props:['good'],
+        template: 
+            `<div class="cata-item">
+                <img src="{{good.url}}">
+                <p class='foodname'>{{good.foodname}}</p>
+                <p class='desc'=>{{good.desc}}</p>
+                <button>Add to Cart</button>
+            </div>`
+    })
+    //Vue instance
+    let app = new Vue({
+        el: '#vue',
+
+        data: {
+            groceryList:[
+                {
+                    foodname: 'Pasta',
+                    desc: 'Healthy Pasta',
+                    url: 'https://upload.wikimedia.org/wikipedia/commons/f/f0/Spaghetti_aglio%2C_olio_e_peperoncino_%2816284859030%29.jpg',},
+                {
+                    foodname: 'Red Crab',
+                    desc: 'Fresh from Alaska',
+                    url: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/Jacques_Lameloise%2C_escab%C3%A8che_d%27%C3%A9crevisses_sur_gaspacho_d%27asperge_et_cresson.jpg'},
+                {
+                    foodname: 'Breakfast Special',
+                    desc: 'good for the soul',
+                    url: 'https://upload.wikimedia.org/wikipedia/commons/0/02/Breakfast_at_Irving_Street_Kitchen.jpg'},
+                {
+                    foodname: 'Sea Shells Mix',
+                    desc: 'For the sell lovers',
+                    url: 'https://upload.wikimedia.org/wikipedia/commons/4/4b/Seafood_linguine.jpg'
+                },
+                {
+                    foodname: 'Ultimate Kebab',
+                    desc: 'The best from Middle East',
+                    url: 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Various_kebab.jpg'
+                },
+                {
+                    foodname: 'Chicken Steak',
+                    desc: 'Grilled to perfection',
+                    url: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Chicken_steak_with_pepper_sauce.jpg'
+                },
+                {
+                    foodname: 'Filet Mignon',
+                    desc: 'Juky steak with patatoes',
+                    url: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/.Filet_mignon_et_foie_gras_au_muscat_de_Beaumes-de-Venise%2C_Pastis_Bistro%2C_Palo_Alto.jpg'
+                },
+                {
+                    foodname: 'Bistro Brunch',
+                    desc: 'A trouch of Australia',
+                    url: 'https://upload.wikimedia.org/wikipedia/commons/4/48/Dishes_at_Bistro_C%2C_Hastings_Street%2C_Noosa_Heads%2C_Queensland_02.jpg'
+                },
+                {
+                    foodname: 'California Crepe',
+                    desc: 'Stuffed with grilled shrimp',
+                    url: 'https://upload.wikimedia.org/wikipedia/commons/3/32/2011-04-09_17.02.43%2C_Whispers_Cafe_and_Creperie%2C_Belmont%2C_CA_%285982715933%29.jpg'
+                },
+                {
+                    foodname: 'Top Burger',
+                    desc: 'The tallest hamburger from Peru',
+                    url: 'https://upload.wikimedia.org/wikipedia/commons/d/d4/Hamburguesa_de_carne.jpg'
+                },
+                {
+                    foodname: 'Chicken Garlic Pizza',
+                    desc:'Our specialty pizza',
+                    url: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Round_Table_chicken_%26_garlic_pizza.JPG'
+                },
+                {
+                    foodname: 'Wok away Healthy',
+                    desc: 'Healthy blend of noodels and wegies',
+                    url: 'https://upload.wikimedia.org/wikipedia/commons/d/d2/Stir_Fry_Wok_-_Free_For_Commercial_Use_-_FFCU_%2827159057131%29.jpg'
+                }
+            ]
+        },
+        methods:{
+        }
+        
+    });
+</script>
 </body>
 </html>
